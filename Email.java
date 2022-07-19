@@ -71,9 +71,13 @@ public void setAlternateEmail(String altEmail) {
 public void changePassword(String newPassword) {
   this.password = newPassword;
 }
-
+// get methods
 public int getMailboxCapacity() { return mailboxCapacity; }
 public String getAlternateEmail() { return alternateEmail; }
 public String getPassword() { return password; }
+
+public String showInfo() {
+  return "First name: " + firstName + "\nLast name: " + lastName + "\nEmail: " + email + "\nDepartment: " + department + "\nPassword: " + password + "\nMailbox capacity: " + mailboxCapacity + "mb" + "\nAlternate email: " + alternateEmail;
+}
 
 }
