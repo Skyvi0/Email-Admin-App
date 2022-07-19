@@ -40,6 +40,7 @@ public Email(String firstName, String lastName) {
 private String setDepartment() {
   System.out.print("What department are you in?\n1 for IT\n2 for Sales\n3 for Accounting\n4 for Marketing\n5 for Human Resources\n");
   Scanner in = new Scanner(System.in);
+  in.close();
   int depChoice = in.nextInt();
   if (depChoice == 1) { return "IT"; }
   else if (depChoice == 2) { return "Sales"; }
