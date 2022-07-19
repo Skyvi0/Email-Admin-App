@@ -7,7 +7,7 @@ private String lastName;
 private String password;
 private String department;
 private int mailboxCapacity;
-private int defaultPasswordLength;
+private int defaultPasswordLength = 10;
 private String alternateEmail;
 
 // Constructor to recieve the first name, last name.
