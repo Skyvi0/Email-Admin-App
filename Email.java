@@ -6,9 +6,11 @@ private String firstName;
 private String lastName;
 private String password;
 private String department;
-private int mailboxCapacity;
+private int mailboxCapacity = 500;
+private String email;
 private int defaultPasswordLength = 10;
 private String alternateEmail;
+private String companySuffix = "company";
 
 // Constructor to recieve the first name, last name.
 public Email(String firstName, String lastName) {
@@ -19,9 +21,14 @@ public Email(String firstName, String lastName) {
   // Call a method asking for department - return the department.
   this.department = setDepartment();
   System.out.println("Department set to " + this.department);
-    // Call a method that returns a random password.
-    this.password = randomPassword(defaultPasswordLength);
-    System.out.println("Password set to " + this.password);
+
+  // Call a method that returns a random password.
+  this.password = randomPassword(defaultPasswordLength);
+  System.out.println("Password set to " + this.password);
+
+  //combine the first and last name to create the email.
+  email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + this.companySuffix + ".com";
+  System.out.println("Email set to " + email);
 }
 
 
@@ -52,9 +59,21 @@ private String randomPassword(int length) {
   return new String(password);
 }
 // Set mailbox capacity
-
+public void setMailboxCapacity(int capacity) {
+  this.mailboxCapacity = capacity;
+}
 // Set the alternate email address
+public void setAlternateEmail(String altEmail) {
+  this.alternateEmail = altEmail;
+}
 
 // Change the password
+public void changePassword(String newPassword) {
+  this.password = newPassword;
+}
+
+public int getMailboxCapacity() { return mailboxCapacity; }
+public String getAlternateEmail() { return alternateEmail; }
+public String getPassword() { return password; }
 
 }
